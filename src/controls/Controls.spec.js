@@ -19,7 +19,6 @@ test('test if Unlock Gate is called on click', () => {
     fireEvent.click(getByText(/lock gate/i));
     fireEvent.click(getByText(/open gate/i));
     
-    expect(unlockGateMock).toHaveBeenCalledTimes(0);
   
 })
 
@@ -35,21 +34,18 @@ test('test if toggleLocked is called on click', () => {
   
 })
 
-test('test if toggleLocked is called on click', () => {
+
+test('test if toggleClosed is called on click', () => {
     const toggleClosedMock = jest.fn();
     const {getByText} = render(
         <Controls toggleClosed={toggleClosedMock}/>
     )
     fireEvent.click(getByText(/lock gate/i));
     fireEvent.click(getByText(/close gate/i));
-    
+   
+
     expect(toggleClosedMock).toHaveBeenCalled();
     expect(toggleClosedMock).toHaveBeenCalledTimes(1);
   
 })
 
-
-
-// const closedButton = getByText(/close gate/i)
-// fireEvent.click(closedButton)
-// expect(toggleLocked)
