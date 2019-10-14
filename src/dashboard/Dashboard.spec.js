@@ -39,19 +39,20 @@ test ('default is open and unlocked', ()=> {
   const { getByText } = render (<Dashboard />);
 
   const lockBtn = getByText(/lock gate/i);
+  fireEvent.click(lockBtn);
+  
+  const closeBtn = getByText(/close gate/i);
   fireEvent.click(closeBtn);
 
-  const closeBtn = getByText(/close gate/i);
-  fireEvent.click(lockBtn);
-
   const openBtn = getByText(/open gate/i);
-  expect(openBtn.disabled).toBe(true);
+  expect(openBtn.disabled).toBe(false);
 
 
-  const unlockBtn = getByText(/unlock gate/i);
+  const unlockBtn = getByText(/lock gate/i);
   expect(unlockBtn.disabled).toBe(false)
 
   expect(openBtn).toBeTruthy();
   expect(unlockBtn).toBeTruthy();
 
+  
   })

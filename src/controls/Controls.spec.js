@@ -8,6 +8,7 @@ import { fireEvent } from 'react-testing-library';
 
 test('Control is rendering correctly.', () => {
     expect(render(<Controls />)).toMatchSnapshot();
+    
 });
 
 

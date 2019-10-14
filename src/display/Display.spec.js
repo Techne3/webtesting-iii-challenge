@@ -52,7 +52,8 @@ test('test to see className when unlocked and closed', ()=>{
       )
         const closedDisplay = getByText(/open/i)
 
-        expect(closedDisplay.className).toMatch("green-led");
+        expect(closedDisplay.className).toMatch("green-led")
+        ;
 
   })
 
